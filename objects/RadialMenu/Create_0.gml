@@ -1,14 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
+radius = 100; alpha = 0;
+offset = -90;
+degrees = 360;
 
-menu[0] = "ATTACK"; menu[1] = "DEFEND"; menu[2] = "SKILL"; menu[3] = "ITEM"; menu[4] = "FLEE"; menu[5] = "MOVE";
+event_user(0);
 
 function createRadialMenu(_array, _radius, _offset, _degrees) {
-	
+	instance_destroy(MenuEntry);
 	//_array:	array of menu items
 	//_radius:	circle radius
-	//_offset:	how many degrees item 0 is offset from *East* (clockwise)
-	//_degrees:	how many degrees between menu 0 ... k
+	//_offset:	how many degrees first item is offset from 0 (clockwise)
+	//_degrees:	how many degrees between entry 0 ... k
 	//_entry:	TBD menu entry object
 	
 	var menu = _array;
@@ -23,9 +26,10 @@ function createRadialMenu(_array, _radius, _offset, _degrees) {
 		var tx = x + r * cos(theta*pi/180);
 		var ty = y + r * sin(theta*pi/180);
 	
-		var entry = instance_create_depth(tx,ty,depth-1, MenuEntry);
-		entry.text = menu[i];
+		var entry = instance_create_depth(tx, ty, depth-1, MenuEntry);
+		//entry.text = menu[i];
+		entryChangeText(menu[i]);
 	}
 }
-	
-createRadialMenu(menu, 100, -50, 180);
+
+createRadialMenu(menu, radius, offset, degrees);

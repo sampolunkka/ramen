@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"RadialMenu","path":"objects/RadialMenu/RadialMenu.yy",},"order":0,},
+    {"id":{"name":"sprBlank1px","path":"sprites/sprBlank1px/sprBlank1px.yy",},"order":0,},
     {"id":{"name":"MenuEntry","path":"objects/MenuEntry/MenuEntry.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
